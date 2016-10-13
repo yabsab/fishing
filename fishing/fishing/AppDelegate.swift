@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  fishing
 //
-//  Created by Yazz on 2016. 10. 12..
+//  Created by Yazz on 2016. 10. 14..
 //  Copyright © 2016년 IMS. All rights reserved.
 //
 
