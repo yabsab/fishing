@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D6EE7267D5392D49D2E5B6368DD72A20D573D460",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "457D04F182DEAA0E82610137E49E092125367FB4" : 9223372036854775807,
+    "D6EE7267D5392D49D2E5B6368DD72A20D573D460" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EB42246A-74BF-484A-866C-F5F7B65F5C85",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "457D04F182DEAA0E82610137E49E092125367FB4" : "util\/NMapViewerViewer\/",
+    "D6EE7267D5392D49D2E5B6368DD72A20D573D460" : "fishing\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "fishing",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "fishing\/fishing.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/oss.navercorp.com\/NaverMap\/ios_navermap_mapviewer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "457D04F182DEAA0E82610137E49E092125367FB4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yabsab\/fishing.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D6EE7267D5392D49D2E5B6368DD72A20D573D460"
+    }
+  ]
+}

@@ -7,13 +7,25 @@
 //
 
 import UIKit
+import MapKit
 
-class mapView: UIViewController {
 
+class mapView: UIViewController, MTMapViewDelegate,UINavigationBarDelegate {
+    let viewMap = MTMapView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+       navigationController?.navigationBar.barTintColor = UIColor.green
+        
+        viewMap.frame =  CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        viewMap.delegate = self
+        viewMap.baseMapType = .hybrid
+        viewMap.daumMapApiKey = "6c92f6351cf2b138b045ba4b1b1ef0f3"
+       
+        
+        self.view.addSubview(viewMap)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,14 +34,5 @@ class mapView: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

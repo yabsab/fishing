@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
-        let vc:UIViewController = storyboard.instantiateViewController(withIdentifier: "mapView") as UIViewController
+        let vc:UIViewController = storyboard.instantiateViewController(withIdentifier: "naviview") as UIViewController
         
         present(vc, animated: false, completion: nil)
 
