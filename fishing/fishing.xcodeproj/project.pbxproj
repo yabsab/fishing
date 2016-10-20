@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F01EC9761DB71B6F0039FC59 /* proFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EC9751DB71B6F0039FC59 /* proFileView.swift */; };
+		F01EC97A1DB738770039FC59 /* mapicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F01EC9791DB738770039FC59 /* mapicon.png */; };
+		F0702D041DB06B25004509FC /* memberJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0702D031DB06B25004509FC /* memberJoin.swift */; };
 		F0C6489A1DAFE4CE00CFA5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C648991DAFE4CE00CFA5E3 /* AppDelegate.swift */; };
 		F0C6489C1DAFE4CE00CFA5E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C6489B1DAFE4CE00CFA5E3 /* ViewController.swift */; };
 		F0C6489F1DAFE4CE00CFA5E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0C6489D1DAFE4CE00CFA5E3 /* Main.storyboard */; };
@@ -51,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F01EC9751DB71B6F0039FC59 /* proFileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = proFileView.swift; sourceTree = "<group>"; };
+		F01EC9791DB738770039FC59 /* mapicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapicon.png; sourceTree = "<group>"; };
+		F0702D031DB06B25004509FC /* memberJoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberJoin.swift; sourceTree = "<group>"; };
 		F0C648961DAFE4CE00CFA5E3 /* fishing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fishing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C648991DAFE4CE00CFA5E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0C6489B1DAFE4CE00CFA5E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +122,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F01EC9771DB72A750039FC59 /* 04)profile */ = {
+			isa = PBXGroup;
+			children = (
+				F01EC9751DB71B6F0039FC59 /* proFileView.swift */,
+			);
+			name = "04)profile";
+			sourceTree = "<group>";
+		};
+		F01EC9781DB738620039FC59 /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				F01EC9791DB738770039FC59 /* mapicon.png */,
+			);
+			name = icon;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F0702D051DB06B29004509FC /* 03)memeberJoin */ = {
+			isa = PBXGroup;
+			children = (
+				F0702D031DB06B25004509FC /* memberJoin.swift */,
+			);
+			name = "03)memeberJoin";
+			path = ..;
+			sourceTree = "<group>";
+		};
 		F0C6488D1DAFE4CD00CFA5E3 = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +172,10 @@
 				F0C648991DAFE4CE00CFA5E3 /* AppDelegate.swift */,
 				F0C648AB1DAFE4F600CFA5E3 /* 01)main */,
 				F0C648AE1DAFE54800CFA5E3 /* 02)mapview */,
+				F0702D051DB06B29004509FC /* 03)memeberJoin */,
+				F01EC9771DB72A750039FC59 /* 04)profile */,
 				F0C6489D1DAFE4CE00CFA5E3 /* Main.storyboard */,
+				F01EC9781DB738620039FC59 /* icon */,
 				F0C648A01DAFE4CE00CFA5E3 /* Assets.xcassets */,
 				F0C648A21DAFE4CE00CFA5E3 /* LaunchScreen.storyboard */,
 				F0C648A51DAFE4CE00CFA5E3 /* Info.plist */,
@@ -315,6 +350,7 @@
 				F0CFADC51DB001FC004AA2BF /* map_present.png in Resources */,
 				F0CFADC11DB001FC004AA2BF /* map_pinup.png in Resources */,
 				F0CFADCB1DB001FC004AA2BF /* point_sprite.png in Resources */,
+				F01EC97A1DB738770039FC59 /* mapicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +364,8 @@
 				F0C6489C1DAFE4CE00CFA5E3 /* ViewController.swift in Sources */,
 				F0C6489A1DAFE4CE00CFA5E3 /* AppDelegate.swift in Sources */,
 				F0C648AD1DAFE54400CFA5E3 /* mapView.swift in Sources */,
+				F01EC9761DB71B6F0039FC59 /* proFileView.swift in Sources */,
+				F0702D041DB06B25004509FC /* memberJoin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +505,7 @@
 					"$(PROJECT_DIR)/IOS_DaumMap_SDK/lib/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = fishing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IMS.JY.fishing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +528,7 @@
 					"$(PROJECT_DIR)/IOS_DaumMap_SDK/lib/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = fishing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.IMS.JY.fishing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
