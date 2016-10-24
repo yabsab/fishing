@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         txpassword.delegate = self
         
         
+        
+        
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -28,6 +30,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     
     }
+    
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        
+        //세로모드
+        return [.portrait,.portraitUpsideDown]
+        
+        
+    }
+    
+
     
     
     //키보드 숨기기

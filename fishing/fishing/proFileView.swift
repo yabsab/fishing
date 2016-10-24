@@ -9,13 +9,32 @@
 import UIKit
 
 class proFileView: UIViewController {
-
+    @IBOutlet weak var myPhoto:UIImageView!
+    @IBOutlet weak var chagneProfile:UIButton!
+    
+    let imageName = "testimage.jpg"
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.red
+        chagneProfile.backgroundColor = UIColor.gray
+       
+        
+        profileMyphoto()
+      
+       
+      
        
     }
+    
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        
+        //세로모드
+        return [.portrait,.portraitUpsideDown]
+        
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -23,14 +42,30 @@ class proFileView: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    
+    func profileMyphoto()  {
+       
+        let image = UIImage(named: imageName)
+        myPhoto.layer.cornerRadius = myPhoto.frame.width/2.0
+        myPhoto.layer.borderWidth = 2.0
+        myPhoto.layer.borderColor = UIColor.white.cgColor
+        myPhoto.clipsToBounds = true
+        myPhoto.image = image
+        
+        
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
+    
+    @IBAction func chagneProfile(_ sender: AnyObject){
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc:UIViewController = storyboard.instantiateViewController(withIdentifier: "profileChange") as UIViewController
+        
+        present(vc, animated: false, completion: nil)
+        
+        
+    }
+   
 }

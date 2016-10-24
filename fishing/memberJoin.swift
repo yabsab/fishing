@@ -36,6 +36,15 @@ class memberJoin: UIViewController {
         
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        
+        //세로모드
+        return [.portrait,.portraitUpsideDown]
+        
+        
+    }
+
+    
     /*
     // MARK: - Navigation
 
