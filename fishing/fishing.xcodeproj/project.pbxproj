@@ -11,6 +11,14 @@
 		F01EC9761DB71B6F0039FC59 /* proFileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01EC9751DB71B6F0039FC59 /* proFileView.swift */; };
 		F01EC97A1DB738770039FC59 /* mapicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F01EC9791DB738770039FC59 /* mapicon.png */; };
 		F0702D041DB06B25004509FC /* memberJoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0702D031DB06B25004509FC /* memberJoin.swift */; };
+		F095100A1DC72B4000CC87A1 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = F09510031DC72B4000CC87A1 /* image1.png */; };
+		F095100B1DC72B4000CC87A1 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = F09510041DC72B4000CC87A1 /* image2.png */; };
+		F095100C1DC72B4000CC87A1 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = F09510051DC72B4000CC87A1 /* image3.png */; };
+		F095100D1DC72B4000CC87A1 /* image4.png in Resources */ = {isa = PBXBuildFile; fileRef = F09510061DC72B4000CC87A1 /* image4.png */; };
+		F095100E1DC72B4000CC87A1 /* image5.png in Resources */ = {isa = PBXBuildFile; fileRef = F09510071DC72B4000CC87A1 /* image5.png */; };
+		F095100F1DC72B4000CC87A1 /* image6.png in Resources */ = {isa = PBXBuildFile; fileRef = F09510081DC72B4000CC87A1 /* image6.png */; };
+		F09510101DC72B4000CC87A1 /* image7.png in Resources */ = {isa = PBXBuildFile; fileRef = F09510091DC72B4000CC87A1 /* image7.png */; };
+		F09510121DC840F300CC87A1 /* myProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09510111DC840F300CC87A1 /* myProfile.swift */; };
 		F0AF65AE1DB8CC2600928BAD /* changeProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AF65AD1DB8CC2600928BAD /* changeProfile.swift */; };
 		F0C481661DB8855C00162D0B /* testimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0C481651DB8855C00162D0B /* testimage.jpg */; };
 		F0C6489A1DAFE4CE00CFA5E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C648991DAFE4CE00CFA5E3 /* AppDelegate.swift */; };
@@ -63,6 +71,14 @@
 		F01EC9751DB71B6F0039FC59 /* proFileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = proFileView.swift; sourceTree = "<group>"; };
 		F01EC9791DB738770039FC59 /* mapicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapicon.png; sourceTree = "<group>"; };
 		F0702D031DB06B25004509FC /* memberJoin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = memberJoin.swift; sourceTree = "<group>"; };
+		F09510031DC72B4000CC87A1 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		F09510041DC72B4000CC87A1 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		F09510051DC72B4000CC87A1 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
+		F09510061DC72B4000CC87A1 /* image4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image4.png; sourceTree = "<group>"; };
+		F09510071DC72B4000CC87A1 /* image5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image5.png; sourceTree = "<group>"; };
+		F09510081DC72B4000CC87A1 /* image6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image6.png; sourceTree = "<group>"; };
+		F09510091DC72B4000CC87A1 /* image7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image7.png; sourceTree = "<group>"; };
+		F09510111DC840F300CC87A1 /* myProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myProfile.swift; sourceTree = "<group>"; };
 		F0AF65AD1DB8CC2600928BAD /* changeProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = changeProfile.swift; sourceTree = "<group>"; };
 		F0C481651DB8855C00162D0B /* testimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testimage.jpg; sourceTree = "<group>"; };
 		F0C648961DAFE4CE00CFA5E3 /* fishing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fishing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +150,7 @@
 		EE04730A36EC66314B89306B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				F0CFAD851DB0018A004AA2BF /* Frameworks */,
 				E56F9D9568D5331B0031D35A /* Pods-fishing.debug.xcconfig */,
 				1AAC58C50BDBA3D7712AB26C /* Pods-fishing.release.xcconfig */,
 			);
@@ -145,6 +162,7 @@
 			children = (
 				F01EC9751DB71B6F0039FC59 /* proFileView.swift */,
 				F0AF65AD1DB8CC2600928BAD /* changeProfile.swift */,
+				F09510111DC840F300CC87A1 /* myProfile.swift */,
 			);
 			name = "04)profile";
 			sourceTree = "<group>";
@@ -152,6 +170,7 @@
 		F01EC9781DB738620039FC59 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				F0950FF21DC725ED00CC87A1 /* testimage */,
 				F0C481651DB8855C00162D0B /* testimage.jpg */,
 				F01EC9791DB738770039FC59 /* mapicon.png */,
 			);
@@ -168,13 +187,26 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		F0950FF21DC725ED00CC87A1 /* testimage */ = {
+			isa = PBXGroup;
+			children = (
+				F09510031DC72B4000CC87A1 /* image1.png */,
+				F09510041DC72B4000CC87A1 /* image2.png */,
+				F09510051DC72B4000CC87A1 /* image3.png */,
+				F09510061DC72B4000CC87A1 /* image4.png */,
+				F09510071DC72B4000CC87A1 /* image5.png */,
+				F09510081DC72B4000CC87A1 /* image6.png */,
+				F09510091DC72B4000CC87A1 /* image7.png */,
+			);
+			path = testimage;
+			sourceTree = "<group>";
+		};
 		F0C6488D1DAFE4CD00CFA5E3 = {
 			isa = PBXGroup;
 			children = (
 				F0C648981DAFE4CE00CFA5E3 /* fishing */,
 				F0CFADCE1DB0022B004AA2BF /* fishing-Bridging-Header.h */,
 				F0C648971DAFE4CE00CFA5E3 /* Products */,
-				F0CFAD851DB0018A004AA2BF /* Frameworks */,
 				EE04730A36EC66314B89306B /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -345,7 +377,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F095100D1DC72B4000CC87A1 /* image4.png in Resources */,
 				F0CFADB81DB001FC004AA2BF /* info_box_tail.png in Resources */,
+				F095100F1DC72B4000CC87A1 /* image6.png in Resources */,
 				F0CFADC81DB001FC004AA2BF /* map_present_tracking.png in Resources */,
 				F0CFADB41DB001FC004AA2BF /* daum_copyright.png in Resources */,
 				F0CFADB91DB001FC004AA2BF /* map_pin.png in Resources */,
@@ -355,8 +389,10 @@
 				F0CFADCA1DB001FC004AA2BF /* noimage256.png in Resources */,
 				F0CFADB51DB001FC004AA2BF /* daum_th_line.png in Resources */,
 				F0CFADB71DB001FC004AA2BF /* info_box.png in Resources */,
+				F09510101DC72B4000CC87A1 /* image7.png in Resources */,
 				F0CFADC41DB001FC004AA2BF /* map_pinup_custom@3x.png in Resources */,
 				F0CFADCD1DB001FC004AA2BF /* th_line.png in Resources */,
+				F095100E1DC72B4000CC87A1 /* image5.png in Resources */,
 				F0CFADBD1DB001FC004AA2BF /* map_pin_red.png in Resources */,
 				F0CFADB31DB001FC004AA2BF /* copyright.png in Resources */,
 				F0CFADB61DB001FC004AA2BF /* detail_button.png in Resources */,
@@ -371,7 +407,10 @@
 				F0C6489F1DAFE4CE00CFA5E3 /* Main.storyboard in Resources */,
 				F0CFADBF1DB001FC004AA2BF /* map_pin_shadow.png in Resources */,
 				F0CFADC91DB001FC004AA2BF /* noimage.png in Resources */,
+				F095100C1DC72B4000CC87A1 /* image3.png in Resources */,
 				F0CFADBB1DB001FC004AA2BF /* map_pin_custom.png in Resources */,
+				F095100A1DC72B4000CC87A1 /* image1.png in Resources */,
+				F095100B1DC72B4000CC87A1 /* image2.png in Resources */,
 				F0CFADC51DB001FC004AA2BF /* map_present.png in Resources */,
 				F0CFADC11DB001FC004AA2BF /* map_pinup.png in Resources */,
 				F0CFADCB1DB001FC004AA2BF /* point_sprite.png in Resources */,
@@ -440,6 +479,7 @@
 				F0C6489A1DAFE4CE00CFA5E3 /* AppDelegate.swift in Sources */,
 				F0C648AD1DAFE54400CFA5E3 /* mapView.swift in Sources */,
 				F01EC9761DB71B6F0039FC59 /* proFileView.swift in Sources */,
+				F09510121DC840F300CC87A1 /* myProfile.swift in Sources */,
 				F0702D041DB06B25004509FC /* memberJoin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,10 +510,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -488,6 +524,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -510,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -524,10 +561,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					"$(ARCHS_STANDARD)",
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -542,6 +575,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -558,7 +592,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -571,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E56F9D9568D5331B0031D35A /* Pods-fishing.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
@@ -595,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1AAC58C50BDBA3D7712AB26C /* Pods-fishing.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = NO;
