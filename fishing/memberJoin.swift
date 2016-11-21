@@ -24,15 +24,10 @@ class memberJoin: UIViewController {
     @IBAction func goMain(_ sender: AnyObject) {
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let vc:UIViewController = storyboard.instantiateViewController(withIdentifier: "mainView") as UIViewController
         
         present(vc, animated: false, completion: nil)
-        
-
-        
-        
-        
+   
         
     }
 
@@ -40,19 +35,7 @@ class memberJoin: UIViewController {
         
         //세로모드
         return [.portrait,.portraitUpsideDown]
-        
-        
-    }
-
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

@@ -125,11 +125,6 @@ override func viewDidLoad() {
             
             // show the alert
            self.present(alert, animated: true, completion: nil)
-            
-                   
-            
-            
-            
 
         }
     
