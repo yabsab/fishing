@@ -14,51 +14,73 @@ import CoreLocation
 class mapView: UIViewController, MTMapViewDelegate,UINavigationBarDelegate,UITabBarControllerDelegate,CLLocationManagerDelegate{
     
     let viewMap = MTMapView()
-    let locationMager = CLLocationManager()
+    let locationManager = CLLocationManager()
     var shopPoint : MTMapPOIItem!
     let accurary = MTMapLocationAccuracy()
    
     
 override func viewDidLoad() {
-        super.viewDidLoad()
-        connect_Test()
     
-        let loc = locationMager.location?.coordinate
+    super.viewDidLoad()
+    
+//    connect_Test()
+//    
+        let loc = locationManager.location?.coordinate
+    
         let map_latitude = loc?.latitude
         let map_longitude = loc?.longitude
-        let centerPoint = MTMapPointGeo(latitude: map_latitude!, longitude:map_longitude!)
     
-        print(centerPoint)
+    
+    if map_latitude != nil {
         
-       navigationController?.navigationBar.barTintColor = UIColor.green
-    
-    
-    
+        let centerPoint = MTMapPointGeo(latitude: map_latitude!, longitude: map_longitude!)
+
+         print(centerPoint)
+        
+        
         viewMap.frame =  CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         viewMap.delegate = self
         viewMap.baseMapType = .hybrid
-        viewMap.daumMapApiKey = "6c92f6351cf2b138b045ba4b1b1ef0f3"
-    
-    
-    
+        
+       
+  
+      
         //지금 위치 불러오기
-        locationMager.delegate = self
-        locationMager.requestAlwaysAuthorization()
-        locationMager.startUpdatingLocation()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
         viewMap.setMapCenter(MTMapPoint.init(geoCoord: centerPoint), zoomLevel: 2, animated: true)
+        
+    
+        //추후 변경하기
+        navigationItem.title="MAP"
+        navigationItem.leftBarButtonItem = UIBarButtonItem (title: "back", style:.plain, target: self, action: #selector(backButton))
+        
+        
+        
+        //back button
+        mapView(viewMap, updateCurrentLocation: MTMapPoint.init(geoCoord: centerPoint), withAccuracy:accurary)
+        
+    }else {
+        
+        print ("데이터 없음 ")
+        
+        
+    }
+    
+    
+    
+    viewMap.daumMapApiKey = "6c92f6351cf2b138b045ba4b1b1ef0f3"
 
     
-    //추후 변경하기
-    navigationItem.title="MAP"
-    navigationItem.leftBarButtonItem = UIBarButtonItem (title: "back", style:.plain, target: self, action: #selector(backButton))
+    
+      navigationController?.navigationBar.barTintColor = UIColor.green
     
     
     
-    //back button
-        mapView(viewMap, updateCurrentLocation: MTMapPoint.init(geoCoord: centerPoint), withAccuracy:accurary)
+               self.view.addSubview(viewMap)
     
-        self.view.addSubview(viewMap)
-        
         
     }
     
@@ -73,6 +95,9 @@ override func viewDidLoad() {
     
     
     
+    
+  
+    
     func backButton (sender : UIBarButtonItem){
         
         print("sexy")
@@ -80,11 +105,11 @@ override func viewDidLoad() {
  
     override func viewWillAppear(_ animated: Bool) {
         
-        viewMap.frame =  CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        viewMap.delegate = self
-        viewMap.baseMapType = .hybrid
-        viewMap.daumMapApiKey = "6c92f6351cf2b138b045ba4b1b1ef0f3"
-        self.view.addSubview(viewMap)
+//        viewMap.frame =  CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+//        viewMap.delegate = self
+//        viewMap.baseMapType = .hybrid
+//        viewMap.daumMapApiKey = "6c92f6351cf2b138b045ba4b1b1ef0f3"
+//        self.view.addSubview(viewMap)
     }
     
 
@@ -112,7 +137,6 @@ override func viewDidLoad() {
         if reacHability?.isReachableViaWiFi == true{
             
             print("wifi")
-            
         }else if reacHability?.isReachableViaWWAN == true{
             
             print("WWAN")

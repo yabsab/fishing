@@ -12,7 +12,12 @@ class profileView: UIViewController, UINavigationBarDelegate {
     
     
     @IBOutlet weak var collectionenvy:UICollectionView!
+    
+    
+    
+    // 네비게이션 바 아이템 아직 사용처 미정
     @IBOutlet weak var btsetting:UIBarButtonItem!
+    @IBOutlet weak var bttest:UIBarButtonItem!
     
     
     
@@ -26,6 +31,8 @@ class profileView: UIViewController, UINavigationBarDelegate {
         navigationController?.navigationBar.barTintColor = UIColor.blue
         
         
+        
+    
         func HearderMyProfileDelegate (_ view: UIView){
             
             
@@ -34,10 +41,26 @@ class profileView: UIViewController, UINavigationBarDelegate {
         
         
         
+  
+
     }
     
     
     
+    //네비게이션 바 아이템 사용 미정
+    @IBAction func test (_ sender : AnyObject){
+        
+        
+       print ("test")
+    }
+    
+    @IBAction func test1 (_ sender : AnyObject){
+        
+        
+        print ("test")
+    }
+    
+  /////////////////////////////////////////////////////
     
     
     
@@ -54,6 +77,15 @@ class profileView: UIViewController, UINavigationBarDelegate {
     
 }
 
+
+func homeButton (_ view: UIView){
+    
+    
+    
+    
+    
+    
+}
 
 
 
@@ -78,6 +110,7 @@ extension profileView: UICollectionViewDataSource, UICollectionViewDelegate, Hea
         
         
         return cell
+        
     }
     
     
@@ -96,8 +129,7 @@ extension profileView: UICollectionViewDataSource, UICollectionViewDelegate, Hea
         
         
         return headerView
-        
-        
+
         
     }
     

@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         txid.delegate = self
         txpassword.delegate = self
         
+       makeFolder ()
         
         
         
@@ -113,5 +114,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
     }
 
+    
+    func makeFolder () {
+        
+        
+        
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let dataPath = documentsDirectory.appendingPathComponent("Picture")
+        
+        
+        do {
+            try FileManager.default.createDirectory(atPath: dataPath.path, withIntermediateDirectories: true, attributes: nil)
+        } catch let error as NSError {
+            print("Error creating directory: \(error.localizedDescription)")
+        }
+        
+        
+        
+
+    }
+    
+    
+    
 }
 
