@@ -7,29 +7,63 @@
 //
 
 import UIKit
+import AssetsLibrary
 
-class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDelegate, UITableViewDataSource {
+class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var tbMyinformation : UITableView!
     
-    var fishinginfor = [ "낚시대","낚시줄","루어","릴"]
+   var arrayfishinginfor: [String] = ["","","","",""]
+   var arrayMyinfor: [String] = ["","",""]
+    
+    var dicInfor : Dictionary <String, String> = [:]
+    
+    var ivPhoto = UIImageView()
+    let picpic = UIImagePickerController()
+    
+    
+    var fishinginfor = ["낚시대","낚시줄","루어","릴","상태"]
+    var tes11t = ["","","","",""]
     var myinfor = ["ID", "이메일","즐겨찾는 장소"]
     var imIcon = ["imProfile.png","imEmail.png","imBookmark.png"]
+    var fishinIcon = ["imStick.png","imThread.png","imLures.png","imReel.png",
+                      "imInforicon.jpg"]
+    
+    var arrayOfTextFields:[UITextField] = []
+    var arrayOfTextFields1:[String] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+      
         tbMyinformation.dataSource = self
         tbMyinformation.delegate = self
-        tbMyinformation.allowsSelection = false
-
+        
+        
+        
+       
         navigationItem.title="프로필 편집"
         navigationItem.leftBarButtonItem = UIBarButtonItem (title: "취소", style:.plain, target: self, action: #selector(backButton))
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem (title: "완료", style:.plain, target: self, action: #selector(setting))
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(profileChange.dismissKeyboard))
+   
+        
+        view.addGestureRecognizer(tap)
+        
+    }
+    
+  
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
+
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,37 +85,115 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
         
     }
     
-    func setting (_ sender: AnyObject){
-        
-        let storyboard : UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
-        let vc:UIViewController = storyboard.instantiateViewController(withIdentifier: "mainTabView") as UIViewController
-        present (vc, animated: false, completion: nil)
-        
-        print ("test")
 
+    func firstResponderAction(){
+        
+         self.view.endEditing(true);
+        
     }
+    
+    
+
+    
     
     //table 이미지
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         let cell = UITableViewCell()
         
-        switch indexPath.section {
-        case 0 :
+        tbMyinformation.register(profileChangeCell.self, forCellReuseIdentifier: "cell")
 
-            cell.textLabel?.text = fishinginfor[indexPath.row]
-            return cell
+        
+        let cell = tbMyinformation.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! profileChangeCell
+      
+        let screenSize: CGRect = cell.bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        let inputTxFiled = UITextField(frame: CGRect(x: 60, y: 0, width: screenWidth-59, height: screenHeight))
+        
+        inputTxFiled.clearButtonMode =  UITextFieldViewMode.whileEditing
+        inputTxFiled.addTarget(nil, action:Selector(("firstResponderAction:")), for:.editingDidEndOnExit)
+       
+        
+    switch indexPath.section {
+        
+  // 그룹 1 낚시대, 낚시줄, 루어, 릴, 상태 아이템 입력
+        
+        
+        case 0 :
+     
+ 
+        let imageName = UIImage(named: fishinIcon[indexPath.row])
+    
+        if (fishinginfor[0] == "낚시대" && fishinginfor[1] == "낚시줄" && fishinginfor[2] == "루어" && fishinginfor[3] == "릴" && fishinginfor[4] == "상태"){
+
+            cell.contentView.addSubview(inputTxFiled)
+            cell.imageView?.image  = imageName
+            inputTxFiled.text = fishinginfor[indexPath.row]
+            inputTxFiled.clearsOnBeginEditing = true
+            inputTxFiled.font = UIFont(name: "Kailasa", size: 13)
+            inputTxFiled.endEditing(true)
+   
+           
+            
+           if let textfield  = cell.contentView.subviews[0] as? UITextField {
+
+      
+           dicInfor = ["test" : textfield.text!]
+          
+            Savedata(wowowo: dicInfor)
+        }
+
+ 
+               
+                
+            
+ 
+        }else {
+            
+
+            inputTxFiled.text = fishinginfor[indexPath.row]
+            cell.contentView.addSubview(inputTxFiled)
+            cell.imageView?.image  = imageName
+            inputTxFiled.font = UIFont(name: "Kailasa", size: 13)
+            inputTxFiled.endEditing(true)
+            
+    
+        }
+        
+        tbMyinformation?.sectionIndexBackgroundColor? = UIColor.clear
+
+
+        return cell
+
+// 그룹 1 ID, 이메일, 즐겨찾는 장소 (DB에 불러 올 수 있도록) 즐겨찾기는 자주 가든거 3군대 또는 지역 하나로
+        
         case 1:
          
-            let imageName = UIImage(named: imIcon[indexPath.row])
-            cell.imageView?.sizeToFit()
+         let imageName = UIImage(named: imIcon[indexPath.row])
+//         cell.imageView?.sizeToFit()
+         inputTxFiled.font = UIFont(name: "Kailasa", size: 13)
          
+         inputTxFiled.delegate = self
+         
+         
+         inputTxFiled.text = myinfor[indexPath.row]
+         cell.imageView?.image  = imageName
+         cell.contentView.addSubview(inputTxFiled)
+         print("case 1 ",myinfor[indexPath.row])
+         inputTxFiled.endEditing(true)
+  
+         tbMyinformation?.sectionIndexBackgroundColor? = UIColor.clear
+         
+         for i in 0 ..< 3 {
             
-            
-             cell.imageView?.image  = imageName
-             cell.textLabel?.text = myinfor[indexPath.row]
-        return cell
+            arrayMyinfor[i] = myinfor[i]
+          
+         }
+        
+         
+         return cell
+        
             
         default:
             return cell
@@ -91,26 +203,54 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
     }
     
     
-//    // 헤더title
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        
-//        
-//        switch section {
-//        case 0:
-//            
-//            return""
-//            
-//        case 1:
-//            
-//            
-//            return"개인정보"
-//        default:
-//             return ""
-//        }
-//
-//        
-//        
-//    }
+    
+    
+    //profile Change 오른쪽 버튼
+    
+    func setting (_ sender: AnyObject){
+
+        tbMyinformation?.reloadData()
+
+    }
+    
+    
+    func Savedata(wowowo : Dictionary<String, Any>){
+        
+        var i = 0
+  
+        for value in wowowo.values {
+             arrayfishinginfor[i] = value as! String
+             print("array:\(arrayfishinginfor[i])")
+            
+            i += 1
+            
+            print("i:\(i)")
+
+        }
+      
+        
+    }
+    
+    
+    
+    
+    
+    // 함수 일단 대기
+    
+    func getTablecellData(test:NSArray) {
+        
+        
+        
+    }
+    
+
+    
+    
+    
+    @IBAction func textField(_ sender: AnyObject) {
+        self.view.endEditing(true);
+    }
+    
     
     
  //그룹 머릿말 크기
@@ -129,8 +269,13 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
         }
     }
     
-    
-    
+
+    func call_data(data:NSArray){
+        
+        
+        
+    }
+
     
     //그룹별 table
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -138,6 +283,10 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
     }
     
 
+    
+    
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         
@@ -155,6 +304,9 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
         
         
     }
+    
+    
+    
     // 헤더 버튼 및 이미지 뷰 설정
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -167,14 +319,14 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
             let btPhoto = UIButton(frame: CGRect(x: tableView.frame.width/2-40, y:75, width: 50, height: 75))
             
             btPhoto.backgroundColor = UIColor.yellow
-           btPhoto.setTitle("프로필 사진 바꾸기", for: UIControlState.normal)
-                btPhoto.titleLabel!.font = UIFont.systemFont(ofSize: 13)
+            btPhoto.setTitle("프로필 사진 바꾸기", for: UIControlState.normal)
+            btPhoto.titleLabel!.font = UIFont.systemFont(ofSize: 13)
             btPhoto.setTitleColor(UIColor.blue, for: UIControlState.normal)
             btPhoto.sizeToFit()
             
             //image view 
             
-            let ivPhoto : UIImageView = UIImageView (frame: CGRect(x :tableView.frame.width/2-23, y: 10, width : 65, height :65 ))
+            ivPhoto = UIImageView (frame: CGRect(x :tableView.frame.width/2-23, y: 10, width : 65, height :65 ))
             ivPhoto.backgroundColor = UIColor.white
             
             ivPhoto.image = UIImage(named: "testimage.jpg")
@@ -185,10 +337,7 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
             btPhoto.addTarget(self, action: #selector(btPhotoPopup),  for: .touchUpInside)
             
             return oneView
-  
-            
-            
-            
+
             
         }else if(section == 1) {
             
@@ -213,8 +362,17 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
     
     
     
+
     
-    func btPhotoPopup(sender: UIButton){
+    
+    
+    
+    
+    
+    
+    
+    
+    func btPhotoPopup(sender: AnyObject){
         
         let alert = UIAlertController(title: nil , message: "프로필 사진 바꾸기", preferredStyle: UIAlertControllerStyle.actionSheet)
         
@@ -226,27 +384,51 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
             
             (alert: UIAlertAction!) -> Void in
             
+            //이부분 수정 하기 2016.12.14
+            self.ivPhoto.image = UIImage(named: "testimage.jpg")
+            
             print("delete")
-            
-            
+   
         })
         
-        //사진 삭제하기
+        
+        
+        
+        //사진 촬영
         let ACtakePhoto = UIAlertAction(title: "사진 찍기" , style: .default, handler: {
             
             
             (alert: UIAlertAction!) -> Void in
+
             
+            let storyboard : UIStoryboard = UIStoryboard(name:"Main", bundle: nil)
+            let vc:UIViewController = storyboard.instantiateViewController(withIdentifier: "profileCameraView") as UIViewController
+            self.present (vc, animated: false, completion: nil)
+
+            
+//            self.picpic.delegate = self
+//            
+//            self.picpic.sourceType = .camera
+//           
+//            self.present(self.picpic, animated: true, completion: nil)
+//            
             print("takepic")
         
             })
+        
+         //라이브러리에서 선택
         
         let ACtakelib = UIAlertAction(title: "라이브러리에서 선택" , style: .default, handler: {
             
             
             (alert: UIAlertAction!) -> Void in
             
-            print("takepic")
+           
+            self.picpic.delegate = self
+            self.picpic.sourceType = .photoLibrary
+            self.present(self.picpic, animated: true, completion: nil)
+            
+            
             
         })
         
@@ -277,7 +459,19 @@ class profileChange: UIViewController, UINavigationBarDelegate, UITableViewDeleg
     }
 
 
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            ivPhoto.contentMode = .scaleToFill
+//            ivPhoto.image = pickedImage
+//        }
+//        
+//        picker.dismiss(animated: true, completion: nil)
+//    }
+//    
+    
+       
 }
+
 
 
 

@@ -12,9 +12,7 @@ protocol HearderMyProfileDelegate: class {
     
     func btClickHearderMyProfile(_ view: UIView)
     
-    
-    
-    
+
 }
 
 
